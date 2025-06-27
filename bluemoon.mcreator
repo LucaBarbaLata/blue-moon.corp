@@ -1,15 +1,13 @@
 {
   "mod_elements": [
     {
-      "name": "Dgf",
-      "type": "recipe",
+      "name": "Dsadd",
+      "type": "tab",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "dgf",
+      "registry_name": "dsadd",
       "metadata": {
-        "files": [
-          "src/main/resources/data/bluemoon/recipes/dgf.json"
-        ]
+        "files": []
       }
     }
   ],
@@ -18,7 +16,9 @@
   "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "item_group.bluemoon.dsadd": "Dsadd"
+    }
   },
   "foldersRoot": {
     "name": "~",
