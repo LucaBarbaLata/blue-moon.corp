@@ -47,8 +47,14 @@ jobs:
           VERSION=${{ steps.versioning.outputs.clean_version }}
           echo "Updating bluemoon.mcreator version to $VERSION"
           jq --arg ver "$VERSION" '.workspaceSettings.version = $ver' bluemoon.mcreator > bluemoon.tmp && mv bluemoon.tmp bluemoon.mcreator
-          echo "Version in bluemoon.mcreator after update:"
           jq '.workspaceSettings.version' bluemoon.mcreator
+
+      - name: Update version in mods.toml
+        run: |
+          VERSION=${{ steps.versioning.outputs.clean_version }}
+          echo "Updating mods.toml version to $VERSION"
+          sed -i "s/^version *= *\".*\"/version = \"${VERSION}\"/" src/main/resources/META-INF/mods.toml
+          grep "^version" src/main/resources/META-INF/mods.toml || echo "Version line not found"
 
       - name: Build mod using Gradle
         run: ./gradlew build
