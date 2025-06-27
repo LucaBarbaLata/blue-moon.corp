@@ -1,4 +1,4 @@
-package net.mcreator.bluemoon;
+package net.david.bluemoon;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
