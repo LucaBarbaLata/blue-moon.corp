@@ -2,11 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "a"
+    "ab"
   ],
   "key": {
     "a": {
       "item": "minecraft:redstone_block"
+    },
+    "b": {
+      "item": "minecraft:birch_wood"
     }
   },
   "result": {
