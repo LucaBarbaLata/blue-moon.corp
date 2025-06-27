@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "bluemoon:item/ppl_noise_md"
+  }
+}

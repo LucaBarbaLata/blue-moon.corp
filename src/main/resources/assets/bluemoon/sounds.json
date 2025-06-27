@@ -1,0 +1,38 @@
+{
+  "kittys_journey_ogg": {
+    "subtitle": "subtitles.kittys_journey_ogg",
+    "sounds": [
+      {
+        "name": "bluemoon:spotidownloader.com_-_kittys_journey_-_boris_brejcha",
+        "stream": true
+      }
+    ]
+  },
+  "night_owl_ogg": {
+    "subtitle": "subtitles.night_owl_ogg",
+    "sounds": [
+      {
+        "name": "bluemoon:spotidownloader.com_-_night_owl_-_boris_brejcha",
+        "stream": true
+      }
+    ]
+  },
+  "the_final_ogg": {
+    "subtitle": "subtitles.the_final_ogg",
+    "sounds": [
+      {
+        "name": "bluemoon:spotidownloader.com_-_the_final_-_mixed_-_boris_brejcha",
+        "stream": true
+      }
+    ]
+  },
+  "purple_noise_ogg": {
+    "subtitle": "subtitles.purple_noise_ogg",
+    "sounds": [
+      {
+        "name": "bluemoon:spotidownloader.com_-_purple_noise_-_boris_brejcha",
+        "stream": true
+      }
+    ]
+  }
+}

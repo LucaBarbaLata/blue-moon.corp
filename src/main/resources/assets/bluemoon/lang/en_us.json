@@ -1,1 +1,15 @@
-{}
+{
+  "item.bluemoon.purple_noise_music_disc.desc": "Purple Noise - Boris Brejcha",
+  "subtitles.night_owl_ogg": "Night Owl - Boris Brejcha",
+  "item.bluemoon.purple_noise_music_disc": "Purple Noise",
+  "item.bluemoon.the_final_mixed_music_disc.desc": "The Final (Mixed) - Boris Brejcha",
+  "subtitles.kittys_journey_ogg": "Kittys Journey - Boris Brejcha",
+  "subtitles.purple_noise_ogg": "Purple Noise - Boris Brejcha",
+  "item.bluemoon.night_owl_music_disc": "Night Owl",
+  "item_group.bluemoon.blue_moon": "Blue Moon",
+  "item.bluemoon.the_final_mixed_music_disc": "The Final - Mixed",
+  "item.bluemoon.kittys_journey_music_disc.desc": "Kittys Journey - Boris Brejcha",
+  "subtitles.the_final_ogg": "The Final - Mixed - Boris Brejcha",
+  "item.bluemoon.night_owl_music_disc.desc": "Night Owl - Boris Brejcha",
+  "item.bluemoon.kittys_journey_music_disc": "Kittys Journey"
+}

@@ -1,11 +1,128 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "NightOwlMusicDisc",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "night_owl_music_disc",
+      "metadata": {
+        "files": [
+          "src/main/java/net/david/bluemoon/item/NightOwlMusicDiscItem.java",
+          "src/main/resources/assets/bluemoon/models/item/night_owl_music_disc.json"
+        ]
+      }
+    },
+    {
+      "name": "KittysJourneyMusicDisc",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kittys_journey_music_disc",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/bluemoon/models/item/kittys_journey_music_disc.json",
+          "src/main/java/net/david/bluemoon/item/KittysJourneyMusicDiscItem.java"
+        ]
+      }
+    },
+    {
+      "name": "TheFinalMixedMusicDisc",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "the_final_mixed_music_disc",
+      "metadata": {
+        "files": [
+          "src/main/java/net/david/bluemoon/item/TheFinalMixedMusicDiscItem.java",
+          "src/main/resources/assets/bluemoon/models/item/the_final_mixed_music_disc.json"
+        ]
+      }
+    },
+    {
+      "name": "PurpleNoiseMusicDisc",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "purple_noise_music_disc",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/bluemoon/models/item/purple_noise_music_disc.json",
+          "src/main/java/net/david/bluemoon/item/PurpleNoiseMusicDiscItem.java"
+        ]
+      }
+    },
+    {
+      "name": "BlueMoon",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blue_moon",
+      "metadata": {
+        "files": []
+      }
+    }
+  ],
   "variable_elements": [],
-  "sound_elements": [],
-  "tag_elements": {},
+  "sound_elements": [
+    {
+      "name": "kittys_journey_ogg",
+      "files": [
+        "spotidownloader.com_-_kittys_journey_-_boris_brejcha"
+      ],
+      "category": "record",
+      "subtitle": "Kittys Journey - Boris Brejcha"
+    },
+    {
+      "name": "night_owl_ogg",
+      "files": [
+        "spotidownloader.com_-_night_owl_-_boris_brejcha"
+      ],
+      "category": "record",
+      "subtitle": "Night Owl - Boris Brejcha"
+    },
+    {
+      "name": "the_final_ogg",
+      "files": [
+        "spotidownloader.com_-_the_final_-_mixed_-_boris_brejcha"
+      ],
+      "category": "record",
+      "subtitle": "The Final - Mixed - Boris Brejcha"
+    },
+    {
+      "name": "purple_noise_ogg",
+      "files": [
+        "spotidownloader.com_-_purple_noise_-_boris_brejcha"
+      ],
+      "category": "record",
+      "subtitle": "Purple Noise - Boris Brejcha"
+    }
+  ],
+  "tag_elements": {
+    "ITEMS:minecraft:music_discs": [
+      "~CUSTOM:PurpleNoiseMusicDisc",
+      "~CUSTOM:TheFinalMixedMusicDisc",
+      "~CUSTOM:KittysJourneyMusicDisc",
+      "~CUSTOM:NightOwlMusicDisc"
+    ]
+  },
   "tab_element_order": {},
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "item.bluemoon.purple_noise_music_disc.desc": "Purple Noise - Boris Brejcha",
+      "subtitles.night_owl_ogg": "Night Owl - Boris Brejcha",
+      "item.bluemoon.purple_noise_music_disc": "Purple Noise",
+      "item.bluemoon.the_final_mixed_music_disc.desc": "The Final (Mixed) - Boris Brejcha",
+      "subtitles.kittys_journey_ogg": "Kittys Journey - Boris Brejcha",
+      "subtitles.purple_noise_ogg": "Purple Noise - Boris Brejcha",
+      "item.bluemoon.night_owl_music_disc": "Night Owl",
+      "item_group.bluemoon.blue_moon": "Blue Moon",
+      "item.bluemoon.the_final_mixed_music_disc": "The Final - Mixed",
+      "item.bluemoon.kittys_journey_music_disc.desc": "Kittys Journey - Boris Brejcha",
+      "subtitles.the_final_ogg": "The Final - Mixed - Boris Brejcha",
+      "item.bluemoon.night_owl_music_disc.desc": "Night Owl - Boris Brejcha",
+      "item.bluemoon.kittys_journey_music_disc": "Kittys Journey"
+    }
   },
   "foldersRoot": {
     "name": "~",
@@ -16,7 +133,7 @@
     "modName": "Bluemoon",
     "version": "1.0.0",
     "description": "idk yet",
-    "author": "David",
+    "author": "David, Luca",
     "websiteURL": "https://github.com/LucaBarbaLata/blue-moon.corp",
     "license": "Not specified",
     "serverSideOnly": false,
