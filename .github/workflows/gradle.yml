@@ -1,0 +1,56 @@
+name: Release Bluemoon.corp Mod
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    name: Build and Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to create releases and tags
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build mod
+        run: ./gradlew build
+
+      - name: Rename output to Bluemoon.corp.jar
+        run: |
+          mkdir -p packaged
+          cp build/libs/*.jar packaged/Bluemoon.corp.jar
+
+      - name: Get latest tag and increment
+        id: versioning
+        run: |
+          TAG=$(curl -s https://api.github.com/repos/${{ github.repository }}/tags | jq -r '.[0].name' | sed 's/v//')
+          if [[ "$TAG" == "null" ]]; then
+            NEW_TAG="v1.0.0"
+          else
+            IFS='.' read -r MAJOR MINOR PATCH <<< "$TAG"
+            PATCH=$((PATCH + 1))
+            NEW_TAG="v$MAJOR.$MINOR.$PATCH"
+          fi
+          echo "new_tag=$NEW_TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.versioning.outputs.new_tag }}
+          name: Bluemoon.corp ${{ steps.versioning.outputs.new_tag }}
+          body: ${{ github.event.head_commit.message }}
+          files: packaged/Bluemoon.corp.jar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
