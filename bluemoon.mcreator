@@ -47,7 +47,7 @@
     "modName": "bluemoon",
     "version": "1.0.0",
     "author": "David",
-    "websiteURL": "https://mcreator.net",
+    "websiteURL": "https://lucariki.top",
     "license": "Not specified",
     "serverSideOnly": false,
     "modPicture": "chatgpt_image_27_iun._2025_15_26_11",
@@ -56,7 +56,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.20.1",
-    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "credits": "Hey",
     "modElementsPackage": "net.mcreator.bluemoon"
   },
   "mcreatorVersion": 202400452410
