@@ -9,10 +9,10 @@ jobs:
     name: Build and Release
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Needed to create tags and releases
+      contents: write  # Required to create tags/releases
 
     steps:
-      - name: Checkout source
+      - name: Checkout source code
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
@@ -27,14 +27,10 @@ jobs:
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
 
-      - name: Build mod
+      - name: Build mod using Gradle
         run: ./gradlew build
 
-      - name: Rename output to Bluemoon.corp.jar
-        run: |
-          mkdir -p packaged
-          cp build/libs/*.jar packaged/Bluemoon.corp.jar
-
+      # This step gets the latest tag, increments the patch version, or sets 1.0.0 if none exists
       - name: Get latest tag and increment version
         id: versioning
         run: |
@@ -48,12 +44,23 @@ jobs:
           fi
           echo "new_tag=$NEW_TAG" >> "$GITHUB_OUTPUT"
 
+      # Rename your built jar to include the version and forge info
+      - name: Rename output jar with version and forge info
+        run: |
+          VERSION=${{ steps.versioning.outputs.new_tag }}
+          VERSION=${VERSION#v}  # Remove leading 'v' from tag (v1.0.0 → 1.0.0)
+          FORGE_VERSION="forge-1.20.1"  # Change this if you update forge version
+          NEW_NAME="bluemoon-${VERSION}-${FORGE_VERSION}.jar"
+          mkdir -p packaged
+          cp build/libs/*.jar "packaged/${NEW_NAME}"
+
+      # Create GitHub release and upload the renamed jar
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.versioning.outputs.new_tag }}
           name: Bluemoon.corp ${{ steps.versioning.outputs.new_tag }}
-          body: ${{ github.event.head_commit.message }}
-          files: packaged/Bluemoon.corp.jar
+          body: ${{ github.event.head_commit.message }}  # commit message as changelog
+          files: packaged/bluemoon-${{ steps.versioning.outputs.new_tag#v }}-forge-1.20.1.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
