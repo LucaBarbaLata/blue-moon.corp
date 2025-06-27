@@ -30,11 +30,6 @@ jobs:
       - name: Build mod
         run: ./gradlew build
 
-      - name: Rename output to Bluemoon.corp.jar
-        run: |
-          mkdir -p packaged
-          cp build/libs/*.jar packaged/Bluemoon.corp.jar
-
       - name: Get latest tag and increment version
         id: versioning
         run: |
@@ -48,12 +43,21 @@ jobs:
           fi
           echo "new_tag=$NEW_TAG" >> "$GITHUB_OUTPUT"
 
+      - name: Rename output jar with version and forge info
+        run: |
+          VERSION=${{ steps.versioning.outputs.new_tag }}
+          VERSION=${VERSION#v}
+          FORGE_VERSION="forge-1.20.1"
+          NEW_NAME="bluemoon-${VERSION}-${FORGE_VERSION}.jar"
+          mkdir -p packaged
+          cp build/libs/*.jar "packaged/${NEW_NAME}"
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.versioning.outputs.new_tag }}
           name: Bluemoon.corp ${{ steps.versioning.outputs.new_tag }}
           body: ${{ github.event.head_commit.message }}
-          files: packaged/Bluemoon.corp.jar
+          files: packaged/bluemoon-${{ steps.versioning.outputs.new_tag#v }}-forge-1.20.1.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
