@@ -1,0 +1,7 @@
+{
+  "_fv": 73,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"40\" y=\"40\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"text_print\"><value name=\"TEXT\"><block type=\"text\"><field name=\"TEXT\">&lt;#00A8FB&gt;&amp;l&amp;nB&lt;#24B4FC&gt;&amp;l&amp;nl&lt;#49C1FC&gt;&amp;l&amp;nu&lt;#6DCDFD&gt;&amp;l&amp;ne&lt;#92DAFD&gt;&amp;l&amp;nM&lt;#B6E6FE&gt;&amp;l&amp;no&lt;#DBF3FE&gt;&amp;l&amp;no&lt;#FFFFFF&gt;&amp;l&amp;nn</field></block></value><next><block type=\"text_print\"><value name=\"TEXT\"><block type=\"text\"><field name=\"TEXT\">&lt;#9119FB&gt;P&lt;#9623FB&gt;l&lt;#9B2DFB&gt;u&lt;#9F37FC&gt;g&lt;#A441FC&gt;i&lt;#A94BFC&gt;n &lt;#AE55FC&gt;L&lt;#B25FFC&gt;o&lt;#B769FC&gt;a&lt;#BC73FD&gt;d&lt;#C17DFD&gt;e&lt;#C687FD&gt;d &lt;#CA91FD&gt;S&lt;#CF9BFD&gt;u&lt;#D4A5FD&gt;c&lt;#D9AFFE&gt;c&lt;#DEB9FE&gt;e&lt;#E2C3FE&gt;s&lt;#E7CDFE&gt;s&lt;#ECD7FE&gt;f&lt;#F1E1FE&gt;u&lt;#F5EBFF&gt;l&lt;#FAF5FF&gt;l&lt;#FFFFFF&gt;y</field></block></value><next><block type=\"text_print\"><value name=\"TEXT\"><block type=\"text\"><field name=\"TEXT\">&lt;#FB0000&gt;A&lt;#FB1717&gt;u&lt;#FC2E2E&gt;t&lt;#FC4646&gt;h&lt;#FC5D5D&gt;o&lt;#FD7474&gt;r&lt;#FD8B8B&gt;: &lt;#FEA2A2&gt;D&lt;#FEB9B9&gt;a&lt;#FED1D1&gt;v&lt;#FFE8E8&gt;i&lt;#FFFFFF&gt;d</field></block></value></block></next></block></next></block></next></block></xml>"
+  }
+}

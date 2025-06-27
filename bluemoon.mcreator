@@ -1,13 +1,28 @@
 {
   "mod_elements": [
     {
-      "name": "Dsadd",
-      "type": "tab",
+      "name": "LoadedMessage",
+      "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "dsadd",
+      "registry_name": "loaded_message",
       "metadata": {
-        "files": []
+        "files": [
+          "src/main/java/net/mcreator/bluemoon/procedures/LoadedMessageProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "Bm",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bm",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bluemoon/command/BmCommand.java"
+        ]
       }
     }
   ],
@@ -16,9 +31,7 @@
   "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
-    "en_us": {
-      "item_group.bluemoon.dsadd": "Dsadd"
-    }
+    "en_us": {}
   },
   "foldersRoot": {
     "name": "~",
