@@ -30,6 +30,11 @@ jobs:
       - name: Build mod
         run: ./gradlew build
 
+      - name: Rename output to Bluemoon.corp.jar
+        run: |
+          mkdir -p packaged
+          cp build/libs/*.jar packaged/Bluemoon.corp.jar
+
       - name: Get latest tag and increment version
         id: versioning
         run: |
@@ -43,31 +48,12 @@ jobs:
           fi
           echo "new_tag=$NEW_TAG" >> "$GITHUB_OUTPUT"
 
-      - name: Strip leading 'v' from tag for filename
-        id: strip_v
-        run: echo "clean_version=${{ steps.versioning.outputs.new_tag#v }}" >> $GITHUB_OUTPUT
-        # The above line is invalid. Instead, do this:
-        # Use shell to strip the 'v' and output as output variable:
-      # Fixed:
-      - name: Strip leading 'v' from tag for filename
-        id: strip_v
-        run: |
-          echo "clean_version=${{ steps.versioning.outputs.new_tag }}" | sed 's/^v//' >> $GITHUB_OUTPUT
-
-      - name: Rename output jar with version and forge info
-        run: |
-          VERSION=${{ steps.strip_v.outputs.clean_version }}
-          FORGE_VERSION="forge-1.20.1"
-          NEW_NAME="bluemoon-${VERSION}-${FORGE_VERSION}.jar"
-          mkdir -p packaged
-          cp build/libs/*.jar "packaged/${NEW_NAME}"
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.versioning.outputs.new_tag }}
           name: Bluemoon.corp ${{ steps.versioning.outputs.new_tag }}
           body: ${{ github.event.head_commit.message }}
-          files: packaged/bluemoon-${{ steps.strip_v.outputs.clean_version }}-forge-1.20.1.jar
+          files: packaged/Bluemoon.corp.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
