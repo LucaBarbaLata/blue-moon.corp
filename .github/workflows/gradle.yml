@@ -9,7 +9,7 @@ jobs:
     name: Build and Release
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Needed to create tags/releases
+      contents: write
 
     steps:
       - name: Checkout source code
@@ -45,7 +45,10 @@ jobs:
       - name: Update version in bluemoon.mcreator
         run: |
           VERSION=${{ steps.versioning.outputs.clean_version }}
+          echo "Updating bluemoon.mcreator version to $VERSION"
           jq --arg ver "$VERSION" '.workspaceSettings.version = $ver' bluemoon.mcreator > bluemoon.tmp && mv bluemoon.tmp bluemoon.mcreator
+          echo "Version in bluemoon.mcreator after update:"
+          jq '.workspaceSettings.version' bluemoon.mcreator
 
       - name: Build mod using Gradle
         run: ./gradlew build
@@ -53,7 +56,7 @@ jobs:
       - name: Rename output jar with version and forge info
         run: |
           VERSION=${{ steps.versioning.outputs.clean_version }}
-          FORGE_VERSION="forge-1.20.1"  # Change this to your forge version if needed
+          FORGE_VERSION="forge-1.20.1"
           NEW_NAME="bluemoon-${VERSION}-${FORGE_VERSION}.jar"
           mkdir -p packaged
           cp build/libs/*.jar "packaged/${NEW_NAME}"
