@@ -7,8 +7,9 @@ modId="bluemoon"
 version="1.0.0"
 displayName="bluemoon"
 displayURL="https://mcreator.net"
+logoFile="logo.png"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
-authors="User, MCreator"
+authors="David"
 
 # Start of user code block mod configuration
 # End of user code block mod configuration

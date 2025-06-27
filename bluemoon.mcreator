@@ -46,15 +46,17 @@
     "modid": "bluemoon",
     "modName": "bluemoon",
     "version": "1.0.0",
-    "author": "User, MCreator",
+    "author": "David",
     "websiteURL": "https://mcreator.net",
     "license": "Not specified",
     "serverSideOnly": false,
+    "modPicture": "chatgpt_image_27_iun._2025_15_26_11",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.bluemoon"
   },
   "mcreatorVersion": 202400452410
