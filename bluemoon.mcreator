@@ -10,7 +10,12 @@
         "files": [
           "src/main/java/net/mcreator/bluemoon/procedures/LoadedMessageProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     },
     {

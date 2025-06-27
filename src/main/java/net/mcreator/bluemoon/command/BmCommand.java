@@ -32,7 +32,7 @@ public class BmCommand {
 			if (entity != null)
 				direction = entity.getDirection();
 
-			LoadedMessageProcedure.execute();
+			LoadedMessageProcedure.execute(world);
 			return 0;
 		}));
 	}
