@@ -19,7 +19,6 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import net.david.bluemoon.init.BluemoonModTabs;
 import net.david.bluemoon.init.BluemoonModSounds;
-import net.david.bluemoon.init.BluemoonModPaintings;
 import net.david.bluemoon.init.BluemoonModItems;
 
 import java.util.function.Supplier;
@@ -46,8 +45,6 @@ public class BluemoonMod {
 		BluemoonModItems.REGISTRY.register(bus);
 
 		BluemoonModTabs.REGISTRY.register(bus);
-
-		BluemoonModPaintings.REGISTRY.register(bus);
 
 		// Start of user code block mod init
 		// End of user code block mod init
