@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "bluemoon:block/bluedimension_portal_ew"
+    },
+    "axis=x": {
+      "model": "bluemoon:block/bluedimension_portal_ns"
+    }
+  }
+}

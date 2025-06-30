@@ -61,6 +61,28 @@
       "metadata": {
         "files": []
       }
+    },
+    {
+      "name": "Bluedimension",
+      "type": "dimension",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bluedimension",
+      "metadata": {
+        "files": [
+          "src/main/java/net/david/bluemoon/block/BluedimensionPortalBlock.java",
+          "src/main/resources/assets/bluemoon/models/block/bluedimension_portal_ns.json",
+          "src/main/resources/assets/bluemoon/blockstates/bluedimension_portal.json",
+          "src/main/java/net/david/bluemoon/world/teleporter/BluedimensionTeleporter.java",
+          "src/main/resources/assets/bluemoon/models/block/bluedimension_portal_ew.json",
+          "src/main/resources/assets/bluemoon/models/item/bluedimension.json",
+          "src/main/java/net/david/bluemoon/world/dimension/BluedimensionDimension.java",
+          "src/main/java/net/david/bluemoon/item/BluedimensionItem.java",
+          "src/main/resources/data/bluemoon/dimension/bluedimension.json",
+          "src/main/java/net/david/bluemoon/world/teleporter/BluedimensionPortalShape.java",
+          "src/main/resources/data/bluemoon/dimension_type/bluedimension.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -104,6 +126,9 @@
       "~CUSTOM:TheFinalMixedMusicDisc",
       "~CUSTOM:KittysJourneyMusicDisc",
       "~CUSTOM:NightOwlMusicDisc"
+    ],
+    "BLOCKS:minecraft:overworld_carver_replaceables": [
+      "~Blocks.LAPIS_BLOCK"
     ]
   },
   "tab_element_order": {},
@@ -113,6 +138,7 @@
       "subtitles.night_owl_ogg": "Night Owl - Boris Brejcha",
       "item.bluemoon.purple_noise_music_disc": "Purple Noise",
       "item.bluemoon.the_final_mixed_music_disc.desc": "The Final (Mixed) - Boris Brejcha",
+      "item.bluemoon.bluedimension": "Bluedimension Portal Igniter",
       "subtitles.kittys_journey_ogg": "Kittys Journey - Boris Brejcha",
       "subtitles.purple_noise_ogg": "Purple Noise - Boris Brejcha",
       "item.bluemoon.night_owl_music_disc": "Night Owl",

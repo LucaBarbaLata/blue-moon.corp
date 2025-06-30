@@ -20,6 +20,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.david.bluemoon.init.BluemoonModTabs;
 import net.david.bluemoon.init.BluemoonModSounds;
 import net.david.bluemoon.init.BluemoonModItems;
+import net.david.bluemoon.init.BluemoonModBlocks;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -41,6 +42,7 @@ public class BluemoonMod {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		BluemoonModSounds.REGISTRY.register(bus);
+		BluemoonModBlocks.REGISTRY.register(bus);
 
 		BluemoonModItems.REGISTRY.register(bus);
 
